@@ -25,8 +25,12 @@ public: NotQuiteBrightPointer() {}
 			}
 		}
 
-		int  operator *() {
+		T  operator *() {
 			return *_ptr;
+		}
+
+		T * operator->() {
+			return _ptr;
 		}
 
 };

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include "person.h"
 #include "NotQuiteBrightPointer.h"
-// #include <memory>
+#include <memory>
 
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
@@ -23,6 +23,15 @@ void tryMyPointer() {
 	NotQuiteBrightPointer <int> myPrt(new int(5));
 	cout << "my pointer is pointing to: " << *myPrt << "\n";
 	anotherFunction(myPrt);
+
+	Person * p2;
+	p2 = new Person("John", "Smith");
+	cout << p2->getName() << "\n";
+
+	NotQuiteBrightPointer <Person> personPtr(new Person("Jack", "Smart"));
+	cout << personPtr->getName() << "\n";
+	delete p2;
+
 }
 
 
@@ -36,8 +45,7 @@ int main()
 	//// p1.setFirstName("Richard");
 	//// p1.setLastName("O'Callaghan");
 
-	//Person * p2;
-	//p2 = new Person("John", "Smith");
+
 	//unique_ptr<Person> p3(new Person("Jack", "Smart"));
 	//unique_ptr<Person> p4(new Person("Joe", "Smart"));
 	//cout << p1.getName();
