@@ -1,15 +1,15 @@
 #pragma once
 #pragma once
-
+template <class T>
 class NotQuiteBrightPointer {
 
 private:
-	int * _ptr;
+	T * _ptr;
 	bool _isInOriginalFunction;
 
 public: NotQuiteBrightPointer() {}
 
-		NotQuiteBrightPointer(int * ptr) {
+		NotQuiteBrightPointer(T * ptr) {
 			_ptr = ptr;
 			_isInOriginalFunction = true;
 		}
