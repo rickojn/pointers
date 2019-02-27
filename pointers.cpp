@@ -5,8 +5,8 @@
 #include <iostream>
 #include <stdio.h>
 #include "person.h"
-#include "IntPointer.h"
-#include <memory>
+#include "NotQuiteBrightPointer.h"
+// #include <memory>
 
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
@@ -14,13 +14,13 @@
 
 using namespace std;
 
-void anotherFunction(IntPointer myPtr) {
+void anotherFunction(NotQuiteBrightPointer myPtr) {
 	cout << "in another function my pointer is pointing to: " << *myPtr << "\n";
 }
 
 void tryMyPointer() {
 	//int * p = new int(4);
-	IntPointer myPrt(new int(5));
+	NotQuiteBrightPointer myPrt(new int(5));
 	cout << "my pointer is pointing to: " << *myPrt << "\n";
 	anotherFunction(myPrt);
 }

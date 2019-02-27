@@ -151,8 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\pluralsight\IntPointer.h" />
     <ClInclude Include="..\pluralsight\Person.h" />
+    <ClInclude Include="IntPointer.h" />
+    <ClInclude Include="NotQuiteBrightPointer.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>

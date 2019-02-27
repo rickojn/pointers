@@ -18,10 +18,13 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\pluralsight\IntPointer.h">
+    <ClInclude Include="..\pluralsight\Person.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\pluralsight\Person.h">
+    <ClInclude Include="IntPointer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NotQuiteBrightPointer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
