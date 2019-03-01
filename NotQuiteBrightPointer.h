@@ -5,22 +5,22 @@ class NotQuiteBrightPointer {
 
 private:
 	T * _ptr;
-	bool _isInOriginalFunction;
+	bool _isACopy;
 
 public: NotQuiteBrightPointer() {}
 
 		NotQuiteBrightPointer(T * ptr) {
 			_ptr = ptr;
-			_isInOriginalFunction = true;
+			_isACopy = false;
 		}
 
 		NotQuiteBrightPointer(NotQuiteBrightPointer& rhs) {
 			_ptr = rhs._ptr;
-			_isInOriginalFunction = false;
+			_isACopy = true;
 		}
 
 		~NotQuiteBrightPointer() {
-			if (_isInOriginalFunction) {
+			if (!_isACopy) {
 				delete _ptr;
 			}
 		}

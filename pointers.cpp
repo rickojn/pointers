@@ -21,11 +21,13 @@ void anotherFunction(NotQuiteBrightPointer <int> myPtr) {
 void tryMyPointer() {
 	//int * p = new int(4);
 	NotQuiteBrightPointer <int> myPrt(new int(5));
+	NotQuiteBrightPointer <int> myPrt2 = myPrt;
 	cout << "my pointer is pointing to: " << *myPrt << "\n";
 	anotherFunction(myPrt);
 
 	Person * p2;
 	p2 = new Person("John", "Smith");
+	Person * p3 = p2;
 	cout << p2->getName() << "\n";
 
 	NotQuiteBrightPointer <Person> personPtr(new Person("Jack", "Smart"));
