@@ -33,4 +33,11 @@ public: NotQuiteBrightPointer() {}
 			return _ptr;
 		}
 
+		NotQuiteBrightPointer& operator= (NotQuiteBrightPointer nbq) { return nbq; }
+
+		NotQuiteBrightPointer& operator= (T * rawPtr) {
+			_ptr = rawPtr;
+			return *this;
+		}
+
 };

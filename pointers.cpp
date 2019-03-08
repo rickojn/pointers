@@ -11,6 +11,7 @@
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
 #include <crtdbg.h>
+#include "Rectangle.h"
 
 using namespace std;
 
@@ -20,20 +21,24 @@ void anotherFunction(NotQuiteBrightPointer <int> myPtr) {
 
 void tryMyPointer() {
 	//int * p = new int(4);
-	NotQuiteBrightPointer <int> myPrt(new int(5));
-	NotQuiteBrightPointer <int> myPrt2 = myPrt;
-	cout << "my pointer is pointing to: " << *myPrt << "\n";
-	anotherFunction(myPrt);
+	//NotQuiteBrightPointer <int> myPrt(new int(5));
+	//NotQuiteBrightPointer <int> myPrt2 = myPrt;
+	//cout << "my pointer is pointing to: " << *myPrt << "\n";
+	//anotherFunction(myPrt);
 
-	Person * p2;
-	p2 = new Person("John", "Smith");
-	Person * p3 = p2;
-	cout << p2->getName() << "\n";
+	//Person * p2;
+	//p2 = new Person("John", "Smith");
+	//Person * p3 = p2;
+	//cout << p2->getName() << "\n";
 
-	NotQuiteBrightPointer <Person> personPtr(new Person("Jack", "Smart"));
-	cout << personPtr->getName() << "\n";
-	delete p2;
+	//NotQuiteBrightPointer <Person> personPtr(new Person("Jack", "Smart"));
+	//cout << personPtr->getName() << "\n";
+	//delete p2;
 
+	NotQuiteBrightPointer <Rectangle> pRect = new Rectangle(20, 3);
+
+	/*Rectangle * pRect = new Rectangle(20, 30);*/
+	cout << "rect len: " << pRect->getLength() << "\n";
 }
 
 
