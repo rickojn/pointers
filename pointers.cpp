@@ -26,19 +26,23 @@ void tryMyPointer() {
 	//cout << "my pointer is pointing to: " << *myPrt << "\n";
 	//anotherFunction(myPrt);
 
-	//Person * p2;
-	//p2 = new Person("John", "Smith");
+	/*Person * p2;
+	p2 = new Person("John", "Smith");*/
 	//Person * p3 = p2;
 	//cout << p2->getName() << "\n";
 
 	//NotQuiteBrightPointer <Person> personPtr(new Person("Jack", "Smart"));
 	//cout << personPtr->getName() << "\n";
-	//delete p2;
-
-	NotQuiteBrightPointer <Rectangle> pRect = new Rectangle(20, 3);
+	// delete p2;
+	NotQuiteBrightPointer <int> nqbLength(new int(35));
+	NotQuiteBrightPointer <Rectangle> pRect(new Rectangle(20, 3));
+	NotQuiteBrightPointer <Rectangle> pRect2(new Rectangle(nqbLength, 50));
+	NotQuiteBrightPointer <Rectangle> pRect3(new Rectangle(nqbLength, 60));
 
 	/*Rectangle * pRect = new Rectangle(20, 30);*/
 	cout << "rect len: " << pRect->getLength() << "\n";
+	cout << "rect2 len: " << pRect2->getLength() << "\n";
+	cout << "rect3 len: " << pRect3->getLength() << "\n";
 }
 
 

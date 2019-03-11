@@ -1,5 +1,6 @@
 #pragma once
 #pragma once
+#include <iostream>
 template <class T>
 class NotQuiteBrightPointer {
 
@@ -7,7 +8,9 @@ private:
 	T * _ptr;
 	bool _isACopy;
 
-public: NotQuiteBrightPointer() {}
+public: NotQuiteBrightPointer() {
+	std::cout << "NQB default constructor called " << this << "\n";
+}
 
 		NotQuiteBrightPointer(T * ptr) {
 			_ptr = ptr;
@@ -17,6 +20,7 @@ public: NotQuiteBrightPointer() {}
 		NotQuiteBrightPointer(NotQuiteBrightPointer& rhs) {
 			_ptr = rhs._ptr;
 			_isACopy = true;
+			std::cout << "NBQ copy constructor called " << this << "\n";
 		}
 
 		~NotQuiteBrightPointer() {
@@ -33,11 +37,19 @@ public: NotQuiteBrightPointer() {}
 			return _ptr;
 		}
 
-		NotQuiteBrightPointer& operator= (NotQuiteBrightPointer nbq) { return nbq; }
+		NotQuiteBrightPointer& operator= (NotQuiteBrightPointer that) { 
+			_ptr = that._ptr;
+			_isACopy = that._isACopy;
+			return * this; 
+		}
 
 		NotQuiteBrightPointer& operator= (T * rawPtr) {
 			_ptr = rawPtr;
 			return *this;
+		}
+
+		T * getRawPointer() {
+			return _ptr;
 		}
 
 };
